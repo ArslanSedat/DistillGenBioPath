@@ -1,1 +1,1 @@
-# I-JEPA-from-scratch
+# DistillGenBioPath

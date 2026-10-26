@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "distillgenbiopath"
+version = "0.1.0"
+description = "Distillation of pathology foundation model GenBioPath-FM into a compact ViT-S/16 model specialized with Glomerulas."
+readme = "README.md"
+authors = [{ name = "Sedat Arslan" }]
+requires-python = ">=3.12"
+dependencies = [
+    "torch",
+    "timm",
+    "wandb",
+    "numpy",
+    "hydra-core",
+    "omegaconf",
+    "python-dotenv",
+    "opencv-python-headless",
+    "wsistream[tiffslide]>=0.1.5"
+    ]
+
+[project.optional-dependencies]
+dev = ["ruff"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
